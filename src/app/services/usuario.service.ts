@@ -18,17 +18,36 @@ const httpOptions = {
     private userUrl = 'http://localhost:8080/usuarios'; // /user-portal/users?
     //private userUrl = '/api';
   
-    public getUsers() {
-      return this.http.get<Usuario[]>(this.userUrl);   //getAll
-    }                   //indicamos que va a devolver un listado de usuarios
+    public getUsersList(id: number) {
+      return this.http.get<Usuario[]>(this.userUrl+ "/list/"+id);   //getAll
+    }
   
-    //http://localhost:8080/users/5
-    public deleteUser(user) {
-      return this.http.delete(this.userUrl + "/"+ user.id);
+    public getUser(id: number) {
+      return this.http.get(this.userUrl + "/"+ id);
+    }
+
+    public updateUser(user: Usuario, id: number) {
+      return this.http.put(this.userUrl + "/"+ id, user);
+    }
+
+    public deleteUser(id: number) {
+      return this.http.delete(this.userUrl + "/"+ id);
     }
   
     public createUser(user) {
       return this.http.post<Usuario>(this.userUrl, user);
-    }  //le damos la misma ruta a todxs, y a través de aquí decidmos si será GET o POST
-       //en este caso, tiene un parámetro extra, el del própio Objeto
+    } 
+
+    public like(id1: number, id2: number){
+      return this.http.get<Usuario>(this.userUrl + "/like/"+id1+"/"+id2);
+    }
+
+    public dislike(id1: number, id2: number){
+      return this.http.get<Usuario>(this.userUrl + "/dislike/"+id1+"/"+id2);
+    }
+
+    public verMatches(id: number){
+      return this.http.get<Usuario[]>(this.userUrl + "/matches/"+id);
+    }
+
   }
