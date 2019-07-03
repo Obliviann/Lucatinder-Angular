@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Usuario } from '../../models/usuario';
-/*import { UserService } from '../../services/uservice';*/
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-matches',
