@@ -5,7 +5,8 @@ import {MatchesComponent} from './components/matches/matches.component'
 import { InicioComponent } from './components/inicio/inicio.component';
 
 const routes: Routes = [
-  { path: 'inicio', component: InicioComponent}
+  { path: 'inicio', component: InicioComponent},
+  { path: 'match', component: MatchesComponent}
 ];
 
 @NgModule({
