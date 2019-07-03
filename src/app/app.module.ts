@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';//te lo añade automaticamente tras importarlo en app-routing.module
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BienvenidaComponent
   ],
   imports: [
     BrowserModule,
