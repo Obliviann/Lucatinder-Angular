@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+
+import { Usuario } from '../../models/usuario';
+/*import { UserService } from '../../services/uservice';*/
+
 @Component({
   selector: 'app-matches',
   templateUrl: './matches.component.html',
@@ -7,7 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchesComponent implements OnInit {
 
-  constructor() { }
+  usuarios: Usuario[];
+
+  constructor(private router:Router, private usuarioService: UsuarioService) { 
+
+  }
 
   ngOnInit() {
   }
