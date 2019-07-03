@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/models/usuario';
+
+import { Router } from '@angular/router';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,13 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  user: Usuario;
+  constructor(private router: Router, private userService: UsuarioService ) { 
+
   }
 
+  ngOnInit() 
+  {
+    this.userService.getUser(this.user.idusuario)  }
+
   cerrarSesion(): void{
-    
+    //this.router.navigate(['/login']);
   }
 
 }
