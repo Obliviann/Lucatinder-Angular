@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//1.importamos los componentes
+//1.importamos los COMPONENTES
       //este es el nombre de mi clase
 import {BienvenidaComponent} from './components/bienvenida/bienvenida.component'
 //te lo añade automaticamente a app-routing.module

@@ -12,7 +12,7 @@ const httpOptions = {
     providedIn: 'root'
   })
   export class UsuarioService {
-
+    //3, creamos el objeto http
     constructor(private http:HttpClient) {}
 
     private userUrl = 'http://localhost:8080/users'; // /user-portal/users?

@@ -2,11 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    // "types": [
-    //   "jasmine",
-    //  // "mocha",
-    //   "node"
-    // ]
+    "types": [
+      "jasmine",
+     // "mocha",
+      "node"
+    ]
   },
   "files": [
     "src/test.ts",
