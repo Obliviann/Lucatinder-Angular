@@ -1,0 +1,60 @@
+	<div class="titulo">
+		<p>LucaTinder</p>
+	</div>
+    <!--
+	<div class="navbarTinder">
+		<ul class="nav justify-content-center">
+			<li class="nav-item">
+				<form method="POST" th:action="@{/listado}">
+					<input type="hidden" name="id" id="personId"
+						th:value="${user.idusuario}" />
+					<button type="submit" name="submit" value="value" id="btn-like"
+						class="btn btn-link">Inicio</button>
+				</form>
+			</li>
+			<li class="nav-item">
+			<form method="POST" th:action="@{/matches}">
+					<input type="hidden" name="id" id="personId"
+						th:value="${user.idusuario}" />
+					<button type="submit" name="submit" value="value" id="btn-like"
+						class="btn btn-link">Matches</button>
+				</form>
+			</li>
+		</ul>
+	</div>
+    -->
+	<div id="grilla">
+
+		<div class="col-md-4 text-center" style="margin: auto">
+			<h2 class="subtitulo">Perfil</h2>
+			<div class="table-responsive-md">
+				<table id="usuario" class="table">
+					<tr>
+						<td colspan="2"><img src="img/user.png"
+							height="400px" /></td>
+					</tr>
+					<tr>
+						<td>Nombre</td>
+						<td>{{usuario.nombre}}</td>
+					</tr>
+					<tr>
+						<td>Genero</td>
+						<td>{{usuario.genero}}</td>
+					</tr>
+					<tr>
+						<td>Fecha de nacimiento</td>
+						<td>{{usuario.edad}}</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							
+								<button 
+									class="btn btn-danger" (click)="">Cerrar sesión</button>
+							
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>

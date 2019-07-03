@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 
 import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
 import { MatchesComponent } from './components/matches/matches.component';
-import { InicioComponent } from './components/inicio/inicio.component';//te los añade automaticamente tras importarlo en app-routing.module
+import { InicioComponent } from './components/inicio/inicio.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BienvenidaComponent,
     MatchesComponent,
-    InicioComponent
+    InicioComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
