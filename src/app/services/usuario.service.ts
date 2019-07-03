@@ -15,7 +15,7 @@ const httpOptions = {
 
     constructor(private http:HttpClient) {}
 
-    private userUrl = 'http://localhost:8080/users'; // /user-portal/users?
+    private userUrl = 'http://localhost:8080/usuarios'; // /user-portal/users?
     //private userUrl = '/api';
   
     public getUsers() {
