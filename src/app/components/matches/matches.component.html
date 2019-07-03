@@ -1,16 +1,3 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Matches</title>
-<link rel="stylesheet" href="resources/css/estilos.css">
-<link rel="stylesheet" href="resources/css/bootstrap.css">
-<link
-	href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
-	rel="stylesheet">
-</head>
-
-<body>
 	<div class="titulo">
 		<p>LucaTinder</p>
 	</div>
@@ -18,17 +5,17 @@
 	<div class="navbarTinder">
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
-				<form method="POST" th:action="@{/listado}">
+				<form method="POST" [routerLink]="['/listado']">
 					<input type="hidden" name="id" id="personId"
-						th:value="${user.idusuario}" />
+						value="{{user.idusuario}}" />
 					<button type="submit" name="submit" value="value" id="btn-like"
 						class="btn btn-link">Inicio</button>
 				</form>
 			</li>
 			<li class="nav-item">
-				<form method="POST" th:action="@{/perfil}">
+				<form method="POST" [routerLink]="['/perfil']">
 					<input type="hidden" name="id" id="personId"
-						th:value="${user.idusuario}" />
+						value="{{user.idusuario}}" />
 					<button type="submit" name="submit" value="value" id="btn-like"
 						class="btn btn-link">Perfil</button>
 				</form>
@@ -48,18 +35,17 @@
 						<td style="font-weight: bold">Género</td>
 						<td style="font-weight: bold">Chat</td>
 					</tr>
+					<tr *ngFor="let users of Usuario">
+					<!--<tr th:each="users : ${matches}">-->
 
-					<tr th:each="users : ${matches}">
-
-						 <td><img src="images/1.jpg" class="imgTinder" alt="Responsive image" style="width: 60px"></td> 
-						<td style="text-align: left" th:text=${users.nombre}>Nombre</td>
-						<td th:text=${users.genero}>Fecha de Nacimiento</td>
+						<td style="text-align: left">{{users.nombre}}</td>
+						<td>{{users.genero}}</td>
 						<td>
-							<form method="POST" th:action="@{/like}">
+							<form method="POST" [routerLink]="['/like']">
 								<input type="hidden" name="id1" id="personId"
-									th:value="${user.idusuario}" /> 
+									value="{{user.idusuario}}" /> 
 								<input type="hidden" name="id2" id="personId2" 
-									th:value="${users.idusuario}" />
+									value="{{users.idusuario}}" />
 								<button type="submit" name="submit" value="value" id="btn-like"
 									class="btn btn-info">Chat</button>
 							</form>
@@ -71,5 +57,3 @@
 		</div>
 
 	</div>
-</body>
-</html>-->
