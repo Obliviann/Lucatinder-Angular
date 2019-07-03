@@ -9,7 +9,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MatchesComponent
+    MatchesComponent,
     InicioComponent
   ],
   imports: [
