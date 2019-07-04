@@ -13,6 +13,10 @@ const httpOptions = {
   })
   export class UsuarioService {
     //3, creamos el objeto http
+
+    private isUsuarioLoggedIn;
+    public usuarioLogged: Usuario;
+
     constructor(private http:HttpClient) {}
 
     private userUrl = 'http://localhost:8080/usuarios'; // /user-portal/users?
@@ -48,6 +52,17 @@ const httpOptions = {
 
     public verMatches(id: number){
       return this.http.get<Usuario[]>(this.userUrl + "/matches/"+id);
+    }
+
+    setUsuarioLoggedIn(user: Usuario) {
+      this.isUsuarioLoggedIn = true;
+      this.usuarioLogged = user;
+      localStorage.setItem('usuario', JSON.stringify(user));
+    }
+   
+    getUsuarioLoggedIn() {
+      this.usuarioLogged = JSON.parse(localStorage.getItem('usuario'));
+      return this.usuarioLogged;
     }
 
   }

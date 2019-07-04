@@ -8,6 +8,8 @@ import { BienvenidaComponent } from './components/bienvenida/bienvenida.componen
 import { MatchesComponent } from './components/matches/matches.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { UsuarioService } from './services/usuario.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { PerfilComponent } from './components/perfil/perfil.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
