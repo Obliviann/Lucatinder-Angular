@@ -30,6 +30,7 @@ export class InicioComponent implements OnInit {
         this.gotoList();
       } else {
         console.log(`Usuario no encontrado`);
+        alert('Usuario no encontrado');
         //this.gotoList();
       }
     });
@@ -49,6 +50,7 @@ export class InicioComponent implements OnInit {
         this.gotoList();
       } else {
         console.log(`Usuario no registrado`);
+        alert('Usuario no registrado');
         //this.gotoList();
       }
     });
