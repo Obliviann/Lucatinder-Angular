@@ -42,6 +42,7 @@ export class InicioComponent implements OnInit {
     this.user.genero = genero;
 
     this.userService.createUser(this.user).subscribe(result => {
+      this.userService.setUsuarioLoggedIn(this.user);
       this.gotoList();
     }, error => console.error(error));
 

@@ -11,6 +11,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 
 //2. creo las rutas
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'bienvenue', component: BienvenidaComponent },
   { path: 'login', component: InicioComponent},
   { path: 'matches', component: MatchesComponent},
