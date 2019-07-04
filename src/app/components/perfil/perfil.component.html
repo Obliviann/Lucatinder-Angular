@@ -50,11 +50,11 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<form method="POST" [routerLink]="['/login']">
+							
                                 <button type="submit" name="submit" value="value" id="btn-like"
                                     
-									class="btn btn-danger">Cerrar sesión</button>
-							</form>
+									class="btn btn-danger" (click)="irAInicio()" >Cerrar sesión</button>
+							
 						</td>
 					</tr>
 				</table>

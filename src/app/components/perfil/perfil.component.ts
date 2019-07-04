@@ -30,4 +30,11 @@ export class PerfilComponent implements OnInit {
       })
      */
   }
+
+  irAInicio() {
+    //this.user = null;
+    
+    this.router.navigate(['/login']);
+    //console.log(this.user);
+  }
 }
