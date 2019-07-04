@@ -12,16 +12,17 @@ const httpOptions = {
     providedIn: 'root'
   })
   export class UsuarioService {
-    //3, creamos el objeto http
-
+    
     private isUsuarioLoggedIn;
     public usuarioLogged: Usuario;
 
+    //3. creamos el objeto http
     constructor(private http:HttpClient) {}
 
-    private userUrl = 'http://localhost:8080/usuarios'; // /user-portal/users?
+    private userUrl = 'http://localhost:8080/usuarios';
     //private userUrl = '/api';
   
+    //4. añadimos todos los métodos
     public getUsersList(id: number) {
       return this.http.get<Usuario[]>(this.userUrl+ "/list/"+id);   //getAll
     }
