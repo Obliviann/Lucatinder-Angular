@@ -1,30 +1,12 @@
 <div>
-	<div class="titulo">
-		<p>LucaTinder</p>
-	</div>
-
-    <!--
 	<div class="navbarTinder">
 		<ul class="nav justify-content-center">
-			<li class="nav-item">
-				<form method="POST" [routerLink]="['/bienvenue']">
-					<input type="hidden" name="id" id="personId"
-						value="{{usuario.idusuario}}" />
-					<button type="submit" name="submit" value="value" id="btn-like"
-						class="btn btn-link">Inicio</button>
-				</form>
+			<li class="nav-item"><a [routerLink]="['/bienvenue']">Inicio</a>
 			</li>
-			<li class="nav-item">
-			<form method="POST" [routerLink]="['/matches']">
-					<input type="hidden" name="id" id="personId"
-						value="{{usuario.idusuario}}" />
-					<button type="submit" name="submit" value="value" id="btn-like"
-						class="btn btn-link">Matches</button>
-				</form>
+			<li class="nav-item"><a [routerLink]="['/matches']">Matches</a>
 			</li>
 		</ul>
 	</div>
-    -->
 	<div id="grilla">
 
 		<div class="col-md-4 text-center" style="margin: auto">
