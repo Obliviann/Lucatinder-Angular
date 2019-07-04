@@ -1,0 +1,59 @@
+      <div class="container">
+           <div class="row">
+               <div class="col-md-5">
+                   <div id="first">
+                       <div class="myform form ">
+                           <div class="logo mb-3">
+                               <div class="col-md-12 text-center">
+                                   <h1>Iniciar sesión</h1>
+                               </div>
+                            </div>
+                            <div class="form-group">
+                               <input type="number" #id name="id" class="form-control" placeholder="Ingrese ID de usuario"
+                                    style="margin: auto" min="1504">
+                            </div>
+                            <div class="col-md-12 text-center ">
+                                <button type="submit"
+                                    class=" btn btn-block mybtn btn-primary tx-tfm" (click)="login(id.value)">Entrar</button>
+                            </div>
+                               <!-- --------------------------------------- -->
+                            <div class="form-group" style="margin-bottom: 40px">
+                                <br>
+                                <p class="text-center">¿No tienes una cuenta aún?</p>
+                            </div>
+                       </div>
+                   </div>
+                   <!-- ------------ CREAR CUENTA ------------- -->
+                   <div id="second">
+                       <div class="myform form ">
+                           <div class="logo mb-3">
+                               <div class="col-md-12 text-center">
+                                   <h1>Crear cuenta</h1>
+                               </div>
+                           </div>
+                           
+                               <div class="form-group">
+                                   <input type="text" name="nombre" class="form-control" aria-describedby=""
+                                       placeholder="Ingrese nombre completo" style="margin: auto" ngModel="user.nombre">
+                               </div>
+                               <div class="form-group">
+                                   <input type="text" name="edad" class="form-control" aria-describedby=""
+                                       placeholder="Ingrese fecha de nacimiento (aaaa/mm/dd)"
+                                       style="margin: auto" ngModel="user.edad">
+                               </div>
+                               <div class="form-group">
+                                   <input type="text" name="genero" class="form-control" aria-describedby=""
+                                       placeholder="Ingrese género (h/m/a)" style="margin: auto" ngModel="user.genero">
+                               </div>
+                               <div class="col-md-12 text-center mb-3">
+                                   <div id="btn-center"></div>
+                                   <button type="submit"
+                                       class=" btn btn-block mybtn btn-primary tx-tfm" (click)="register()">Crear cuenta</button>
+                               </div>
+                           
+                           
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>

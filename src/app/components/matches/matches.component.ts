@@ -12,13 +12,20 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class MatchesComponent implements OnInit {
 
-  usuarios: Usuario[];
+  matches: Array<Usuario>;
+  user: Usuario;
 
-  constructor(private router:Router, private usuarioService: UsuarioService) { 
+  constructor(private router:Router, private userService: UsuarioService) { 
 
   }
 
   ngOnInit() {
+      this.user=this.userService.getUsuarioLoggedIn()
+      this.userService.verMatches(this.user.idusuario)
+      .subscribe(data => {
+        this.matches = data;
+      });
+    }
   }
 
-}
+

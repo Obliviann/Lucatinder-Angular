@@ -12,6 +12,10 @@ const httpOptions = {
     providedIn: 'root'
   })
   export class UsuarioService {
+    
+    private isUsuarioLoggedIn;
+    public usuarioLogged: Usuario;
+
     //3. creamos el objeto http
     constructor(private http:HttpClient) {}
 
@@ -49,6 +53,17 @@ const httpOptions = {
 
     public verMatches(id: number){
       return this.http.get<Usuario[]>(this.userUrl + "/matches/"+id);
+    }
+
+    setUsuarioLoggedIn(user: Usuario) {
+      this.isUsuarioLoggedIn = true;
+      this.usuarioLogged = user;
+      localStorage.setItem('usuario', JSON.stringify(user));
+    }
+   
+    getUsuarioLoggedIn() {
+      this.usuarioLogged = JSON.parse(localStorage.getItem('usuario'));
+      return this.usuarioLogged;
     }
 
   }
