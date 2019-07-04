@@ -1,12 +1,9 @@
-<div class="titulo">
-	<p>LucaTinder</p>
-</div>
 
 <div class="navbarTinder">
 	<ul class="nav justify-content-center">
-		<li class="nav-item"><a class="nav-link text-info" href="#!">Perfil</a>
+		<li class="nav-item"><a class="nav-link text-info" [routerLink]="['/perfil']" href="/src/app/components/perfil/perfil.component.html">Perfil</a>
 		</li>
-		<li class="nav-item"><a class="nav-link text-info" href="/matches">Matches</a>
+		<li class="nav-item"><a class="nav-link text-info" [routerLink]="['/matches']" href="/src/app/components/matches/matches.component.html">Matches</a>
 		</li>
 	</ul>
 </div>
@@ -24,28 +21,28 @@
 					<td style="font-weight: bold">Like</td>
 					<td style="font-weight: bold">DisLike</td>
 				</tr>
-
-				<tr th:each="users : ${listado}">
-
+				
+				<tr *ngFor="let user of userList">
+				
 					<!-- <td><img src="images/1.jpg" class="imgTinder" alt="Responsive image" style="width: 60px"></td>  -->
-					<td style="text-align: left" th:text=${users.nombre}>Nombre</td>
-					<td th:text=${users.genero}>Fecha de Nacimiento</td>
+					<td style="text-align: left">{{user.nombre}}</td>
+					<td>{{user.genero}}</td>
 					<td>
-						<form method="POST" th:action="@{/like}">
+						<form method="POST" [routerLink]="['/like']">
 							<input type="hidden" name="id1" id="personId"
-								th:value="${user.idusuario}" /> 
+								value="{{user.idusuario}}" /> 
 							<input type="hidden" name="id2" id="personId2" 
-								th:value="${users.idusuario}" />
+								value="{{user.idusuario}}" />
 							<button type="submit" name="submit" value="value" id="btn-like"
 								class="btn btn-success">♥</button>
 						</form>
 					</td>
 					<td>
-						<form method="POST" th:action="@{/dislike}">
+						<form method="POST" [routerLink]="['/dislike']">
 							<input type="hidden" name="id1" id="personId"
-								th:value="${user.idusuario}" /> 
+							value="{{user.idusuario}}" /> 
 							<input type="hidden"
-								name="id2" id="personId" th:value="${users.idusuario}" />
+								name="id2" id="personId" value="{{user.idusuario}}" />
 							<button type="submit" name="submit" value="value" id="btn-dislike"
 								class="btn btn-danger">X</button>
 						</form>

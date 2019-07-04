@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -12,7 +13,8 @@ export class InicioComponent implements OnInit {
 
   user: Usuario = new Usuario();
 
-  constructor(private userService: UsuarioService) { }
+  constructor(private userService: UsuarioService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,6 +27,7 @@ export class InicioComponent implements OnInit {
         this.user = user;
         this.userService.setUsuarioLoggedIn(user);
         console.log(user);
+        this.gotoList();
       } else {
         console.log(`Usuario no encontrado`);
         //this.gotoList();
@@ -33,7 +36,20 @@ export class InicioComponent implements OnInit {
 
   }
 
-  register(){
+  register(nombre: string, edad: Date, genero: string){
+    this.user.nombre = nombre;
+    this.user.edad = edad;
+    this.user.genero = genero;
+
+    this.userService.createUser(this.user).subscribe(result => {
+      this.gotoList();
+    }, error => console.error(error));
+
     console.log(this.user);
   }
+
+  gotoList() {
+    this.router.navigate(['/bienvenue']);
+  }
+
 }
