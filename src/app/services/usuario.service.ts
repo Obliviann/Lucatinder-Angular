@@ -60,8 +60,9 @@ const httpOptions = {
       localStorage.setItem('usuario', JSON.stringify(user));
     }
    
-    getusuarioLoggedIn() {
-        return JSON.parse(localStorage.getItem('usuario'));
+    getUsuarioLoggedIn() {
+      this.usuarioLogged = JSON.parse(localStorage.getItem('usuario'));
+      return this.usuarioLogged;
     }
 
   }
