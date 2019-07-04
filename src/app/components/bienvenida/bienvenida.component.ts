@@ -12,7 +12,8 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class BienvenidaComponent implements OnInit {
   //2. instanciamos un objeto Usuario
-  user: Usuario = new Usuario();  //esto se llena con this.user = data lin 24
+  user: Usuario;  
+  userList : Array<Usuario>;//esto se llena con this.user = data lin 24
   //3.
   constructor(private router: Router, private usuarioService: UsuarioService) { }
 
@@ -30,10 +31,10 @@ export class BienvenidaComponent implements OnInit {
 
   //se ejecuta automáticamente cuando carge la página
   ngOnInit() {
-    // this.usuarioService.getUsersList(this.user.idusuario)
-    // .subscribe( data => { //me suscribo a los servicios del método getUser cuando hago una llamada http
-    //   this.user = data;   //data es la inf que me llega, y se la asigno a user
-    // });
+    this.user = this.usuarioService.getUsuarioLoggedIn();
+    this.usuarioService.getUsersList(this.user.idusuario)
+        .subscribe( data => { //me suscribo a los servicios del método (para peticiones http)
+         this.userList = data; //data es la inf que me llega, y se la asigno a user
+      });
   };
-
 }
