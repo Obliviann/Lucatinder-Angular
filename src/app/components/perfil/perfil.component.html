@@ -38,23 +38,23 @@
 					</tr>
 					<tr>
 						<td>Nombre</td>
-						<td>{{usuario.nombre}}</td>
+						<td>{{user.nombre}}</td>
 					</tr>
 					<tr>
 						<td>Genero</td>
-						<td>{{usuario.genero}}</td>
+						<td>{{user.genero}}</td>
 					</tr>
 					<tr>
 						<td>Fecha de nacimiento</td>
-						<td>{{usuario.edad}}</td>
+						<td>{{user.edad}}</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<form method="POST" [routerLink]="['/login']">
+							
                                 <button type="submit" name="submit" value="value" id="btn-like"
                                     
-									class="btn btn-danger">Cerrar sesión</button>
-							</form>
+									class="btn btn-danger" (click)="irAInicio()" >Cerrar sesión</button>
+							
 						</td>
 					</tr>
 				</table>
