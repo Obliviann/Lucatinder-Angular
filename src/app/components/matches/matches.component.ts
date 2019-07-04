@@ -20,7 +20,7 @@ export class MatchesComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.user=this.userService.getUsuarioLoggedIn
+      this.user=this.userService.getUsuarioLoggedIn()
       this.userService.verMatches(this.user.idusuario)
       .subscribe(data => {
         this.matches = data;
