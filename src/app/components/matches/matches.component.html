@@ -35,17 +35,17 @@
 						<td style="font-weight: bold">Género</td>
 						<td style="font-weight: bold">Chat</td>
 					</tr>
-					<tr *ngFor="let usuario of users">
+					<tr *ngFor="let user of matches">
 					<!--<tr th:each="users : ${matches}">-->
 
-						<td style="text-align: left">{{users.nombre}}</td>
-						<td>{{users.genero}}</td>
+						<td style="text-align: left">{{user.nombre}}</td>
+						<td>{{user.genero}}</td>
 						<td>
 							<form method="POST" [routerLink]="['/like']">
 								<input type="hidden" name="id1" id="personId"
 									value="{{user.idusuario}}" /> 
 								<input type="hidden" name="id2" id="personId2" 
-									value="{{users.idusuario}}" />
+									value="{{user.idusuario}}" />
 								<button type="submit" name="submit" value="value" id="btn-like"
 									class="btn btn-info">Chat</button>
 							</form>
