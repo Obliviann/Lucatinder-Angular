@@ -12,20 +12,24 @@ const httpOptions = {
     providedIn: 'root'
   })
   export class UsuarioService {
-    
+    //
     private isUsuarioLoggedIn;
     public usuarioLogged: Usuario;
 
-    //3. creamos el objeto http
+    //un parámetro en el constructor se considera ya declarado, no hace falta hacerlo
+    //(meterlo como parámetro te permite utilizar sus métodos sin tener que instanciarlo)
+    //3. creamos el objeto http, gestiona las peticiones
     constructor(private http:HttpClient) {}
 
+    //4. url base del servicio REST
     private userUrl = 'http://localhost:8080/usuarios';
-    //private userUrl = '/api';
   
-    //4. añadimos todos los métodos
+    //5. añadimos todos los métodos que vayamos a utilizar
     public getUsersList(id: number) {
       return this.http.get<Usuario[]>(this.userUrl+ "/list/"+id);   //getAll
-    }
+    } //llamamos al http, 
+      //le indicamos el tipo de peticion (get), si va a recibir algún dato,
+      //e (indicamos a dónde hacemos esa petición)
   
     public getUser(id: number) {
       return this.http.get(this.userUrl + "/"+ id);
@@ -59,9 +63,10 @@ const httpOptions = {
       this.isUsuarioLoggedIn = true;
       this.usuarioLogged = user;
       localStorage.setItem('usuario', JSON.stringify(user));
+      //guarda user (en json) en la memoria local
     }
    
-    getUsuarioLoggedIn() {
+    getUsuarioLoggedIn() {//parseamos de json->usuario
       this.usuarioLogged = JSON.parse(localStorage.getItem('usuario'));
       return this.usuarioLogged;
     }

@@ -19,13 +19,16 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() 
   {
+    this.user = this.userService.getUsuarioLoggedIn();
+    console.log(this.user);
 
+  
+  }
 
-    this.userService.getUser(this.user.idusuario)
-      .subscribe( data => {
-        this.user = this.user;
-        console.log(data);
-      })
-     
+  irAInicio() {
+    
+    
+    this.router.navigate(['/login']);
+    
   }
 }
