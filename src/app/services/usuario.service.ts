@@ -61,7 +61,8 @@ const httpOptions = {
     }
    
     getUsuarioLoggedIn() {
-        return JSON.parse(localStorage.getItem('usuario'));
+      this.usuarioLogged = JSON.parse(localStorage.getItem('usuario'));
+      return this.usuarioLogged;
     }
 
   }
